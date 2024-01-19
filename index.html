@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div
+      class="card position-absolute top-50 start-50 translate-middle bg-primary p-2 text-dark bg-opacity-25 shadow-lg rounded"
+      style="width: 50rem"
+    >
+      <div class="card-body">
+        <h5 class="card-title">
+          <div>
+            <img src="logo.png" alt="Bootstrap" width="100" height="100" />
+            Palm Springs Hotel--Booking
+          </div>
+        </h5>
+        <form class="row g-3" onsubmit="myFun(event)">
+          <div class="row g-3">
+            <div class="col">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Full Name"
+                aria-label="Full Names"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Last name"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"
+              >Address</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="Home Address"
+            />
+          </div>
+          <div class="row g-3">
+            <div class="col-sm-7">
+              <input
+                type="text"
+                class="form-control"
+                id="country"
+                placeholder="Country"
+                aria-label=""
+              />
+            </div>
+            <div class="col-sm">
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                placeholder="City"
+                aria-label="State"
+              />
+            </div>
+            <div class="col-sm">
+              <input
+                type="text"
+                class="form-control"
+                id="zip"
+                placeholder="Zip"
+                aria-label="Zip"
+              />
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col">
+              <select
+                class="form-select"
+                id="room"
+                aria-label="Default select example"
+              >
+                <option selected>Room Type</option>
+                <option value="1">King Room</option>
+                <option value="2">Queen Room</option>
+                <option value="3">Deluxe</option>
+                <option value="4">Suite</option>
+              </select>
+            </div>
+            <div class="col">
+              <select
+                class="form-select"
+                id="guest"
+                aria-label="Default select example"
+              >
+                <option selected>Number of Guests</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="col">
+              <select
+                class="form-select"
+                id="number"
+                aria-label="Default select example"
+              >
+                <option selected>Number of Rooms</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+              </select>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="pet"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Pets
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <label for="birthday">Check In</label>
+              <input type="date" id="checkin" name="checkin" />
+            </div>
+            <div class="col">
+              <label for="birthday">Check Out</label>
+              <input type="date" id="checkout" name="checkout" />
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <input class="btn btn-primary" type="submit" value='Book Now'/>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+        function myFun(event){
+            event.preventDefault();
+    
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('address').value;
+            var country = document.getElementById('country').value;
+            var city = document.getElementById('city').value;
+            var zip = document.getElementById('zip').value;
+            var room = document.getElementById('room').value;
+            var guest = document.getElementById('guest').value;
+            var number = document.getElementById('number').value;
+            var pet = document.getElementById('pet').value;
+            var checkin = document.getElementById('checkin').value;
+            var checkout = document.getElementById('checkout').value;
+    
+            localStorage.setItem('Is_name', name);
+            localStorage.setItem('Is_email', email);
+            localStorage.setItem('Is_address', address);
+            localStorage.setItem('Is_country', country);
+            localStorage.setItem('Is_city', city);
+            localStorage.setItem('Is_zip', zip);
+            localStorage.setItem('Is_room', room);
+            localStorage.setItem('Is_guest', guest);
+            localStorage.setItem('Is_number', number);
+            localStorage.setItem('Is_pet', pet);
+            localStorage.setItem('Is_checkin', checkin);
+            localStorage.setItem('Is_checkout', checkout);
+        }
+    </script>
+    
+
+  </body>
+</html>
